@@ -1,5 +1,5 @@
 {
-    "name": "mayeu/flort2-js",
+    "name": "mayeul-t/flort2-js",
     "description": "Generate JS code to use Flotr2.js with PHP 7",
     "type": "library",
     "authors": [
