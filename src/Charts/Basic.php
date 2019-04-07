@@ -23,6 +23,12 @@ class Basic extends Graph
             return Flotr.draw(container,'.json_encode($this->data).',o);
         }graph = drawGraph();';
 
-        return '(function mouse_zoom (container) {' . $optionsDec.$drawGraphFct . '})(document.getElementById("'.$this->container_id.'"));';
+        //Récupération de draw de chaque hook
+        $drawHook = '';
+        foreach ($this->hooks as $hook) {
+            $drawHook .= $hook->draw();
+        }
+
+        return '(function mouse_zoom (container) {' . $optionsDec.$drawGraphFct . $drawHook . '})(document.getElementById("'.$this->container_id.'"));';
     }
 }
